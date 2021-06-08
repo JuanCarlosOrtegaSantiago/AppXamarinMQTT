@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mx="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="AppMQTT.MainPage" Title="Practica 16" Background="#A69F67">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Text="Encender LED" FontSize="12" FontAttributes="Bold" BackgroundColor="#0786DA" TextColor="Black" x:Name="btnEncenderLed" Clicked="btnEncenderLed_Clicked" Grid.Column="0" Grid.Row="0" Margin="0,8"/>
+        <Button Text="Apagar LED" BackgroundColor="#0786DA" TextColor="Black" x:Name="btnApagarLed" Clicked="btnApagarLed_Clicked" Grid.Column="1" Grid.Row="0" Margin="0,8"/>
+        <Button Text="Estado" BackgroundColor="#0786DA" TextColor="Black" x:Name="btnEstatusLed" Clicked="btnEstatusLed_Clicked" Grid.Column="2" Grid.Row="0" Margin="0,8"/>
+
+        <Button Text="Luminosidad" FontSize="12" FontAttributes="Bold" BackgroundColor="#0786DA" TextColor="Black" x:Name="btnConsultarLuminosidad" Clicked="btnConsultarLuminosidad_Clicked" Grid.Column="0" Grid.Row="1"/>
+        <Button Text="Humedad" Background="#0786DA" TextColor="Black" x:Name="btnColsultarHumedad" Clicked="btnColsultarHumedad_Clicked_1" Grid.Column="2" Grid.Row="1"/>
+        <Button Text="Temperatura" FontSize="12" FontAttributes="Bold" Background="#0786DA" TextColor="Black" x:Name="btnColsultarTemperatura" Clicked="btnColsultarTemperatura_Clicked" Grid.Column="1" Grid.Row="1"/>
+
+        <Label Text="Angulo: " FontSize="16" FontAttributes="Bold" Grid.Column="0" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,8"/>
+        <Entry Keyboard="Numeric" x:Name="entAngulo" Grid.Column="1" Grid.Row="2" HorizontalTextAlignment="Center" Margin="0,0,0,8"/>
+        <Button Text="Servo" BackgroundColor="#0786DA" TextColor="Black" x:Name="btnMoverServo"  Clicked="btnMoverServo_Clicked" Grid.Column="2" Grid.Row="2" Margin="0,0,0,8"/>
+
+        <mx:ChartView x:Name="charView" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+        <ListView x:Name="lstMensajes" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4"/>
+    </Grid>
+</ContentPage>
